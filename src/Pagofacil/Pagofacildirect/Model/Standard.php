@@ -33,7 +33,7 @@ class Pagofacil_Pagofacildirect_Model_Standard extends Mage_Payment_Model_Method
             ,"telefono" => $data->getTelefono()
             ,"celular" => $data->getCelular()
             ,"calleyNumero" => $data->getCalleyNumero()
-            ,"colonia" => $data->getColonia()
+            ,"colonia" =>( trim($data->getColonia()) == '' ? substr(trim($data->getCalleyNumero()), 0, 30) : $data->getColonia() )
             ,"municipio" => $data->getMunicipio()
             ,"estado" => $data->getEstado()
             ,"pais" => $data->getPais()
