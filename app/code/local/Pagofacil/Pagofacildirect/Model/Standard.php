@@ -40,8 +40,8 @@ class Pagofacil_Pagofacildirect_Model_Standard extends Mage_Payment_Model_Method
             ,"mensualidades" => $data->getMsi()
         );        
         
-        $infoInstance = $this->getInfoInstance();
-        $infoInstance->setAdditionalData(serialize($info));
+		$infoInstance = $this->getInfoInstance();
+        $infoInstance->setAdditionalData($infoInstance->encrypt(serialize($info)));
         
         return $this;
     }
@@ -97,7 +97,8 @@ class Pagofacil_Pagofacildirect_Model_Standard extends Mage_Payment_Model_Method
         
         // obtener datos del pago en info y asignar monto total
         $infoIntance = $this->getInfoInstance();
-        $info = unserialize($infoIntance->getAdditionalData());
+        $info = unserialize($infoInstance->decrypt($infoInstance->getAdditionalData()));
+		
         $info['idPedido'] = $orderNumber;
         $info['prod'] = trim($this->getConfigData('prod'));
         $info['idSucursal'] = trim($this->getConfigData('sucursalkey'));
