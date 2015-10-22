@@ -1,8 +1,3 @@
-MagentoPlugin
-=============
+# PagoFacil - Plugin para Magento 1.8.x y 1.9.x 
 
-Magento - PagoFácil connection plugin.
-
-This plugin can be officialy installed from Magento Market at:
-
-https://www.magentocommerce.com/magento-connect/pagofacil.html
+Este plugin contiene pagos en efectivo y pagos por tarjeta de credito.
