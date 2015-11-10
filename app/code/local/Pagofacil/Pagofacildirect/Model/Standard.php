@@ -10,7 +10,7 @@ class Pagofacil_Pagofacildirect_Model_Standard extends Mage_Payment_Model_Method
     protected $_formBlockType = 'pagofacildirect/form';
     
     protected $_canUseForMultiShipping = false;    
-    protected $_canUseInternal         = false;
+    protected $_canUseInternal         = true;
     protected $_isInitializeNeeded     = true;
     
     
